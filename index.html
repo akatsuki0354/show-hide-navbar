@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        nav {
+            background-color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+
+        #container {
+            margin-top: 20px;
+        }
+
+        .home-content,
+		.about-content,
+		.contact-content {
+			display: none;
+			margin-top: 50px;
+			text-align: center;
+			font-size: 30px;
+		}
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">My Website</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul>
+                <li><a href="#" class="home-link">Home</a></li>
+                <li><a href="#" class="about-link">About</a></li>
+                <li><a href="#" class="contact-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="home-content">Home Content</section>
+	<section class="about-content">About Content</section>
+	<section class="contact-content">Contact Content</section>
+
+    <script>
+       const homeLink = document.querySelector('.home-link');
+		const aboutLink = document.querySelector('.about-link');
+		const contactLink = document.querySelector('.contact-link');
+		const homeContent = document.querySelector('.home-content');
+		const aboutContent = document.querySelector('.about-content');
+		const contactContent = document.querySelector('.contact-content');
+
+		homeLink.addEventListener('click', (event) => {
+			event.preventDefault();
+			homeContent.classList.add('show');
+			aboutContent.classList.remove('show');
+			contactContent.classList.remove('show');
+		});
+
+		aboutLink.addEventListener('click', (event) => {
+			event.preventDefault();
+			aboutContent.classList.add('show');
+			homeContent.classList.remove('show');
+			contactContent.classList.remove('show');
+		});
+
+		contactLink.addEventListener('click', (event) => {
+			event.preventDefault();
+			contactContent.classList.add('show');
+			homeContent.classList.remove('show');
+			aboutContent.classList.remove('show');
+		});
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
